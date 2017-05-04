@@ -1,0 +1,9 @@
+<% if !@user %>
+  <%= link_to "Login", :login %> or <%= link_to "Sign Up", nil %>
+<% else %>
+  <div>Name : <%= @user.name %></div>
+<% end %>
+
+<div>Battle</div>
+<div>Test</div>
+<div>Settings</div>
