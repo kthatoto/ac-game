@@ -12,9 +12,9 @@ module AcGame
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
     config.generators do |g|
-      g.assets         false
-      g.helper         false
-      g.test_framework false
+      # g.assets         false
+      # g.helper         false
+      # g.test_framework false
     end
   end
 end

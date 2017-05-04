@@ -10,11 +10,15 @@
 <% end %>
 
 <div>online users</div>
-<div class="login_users"></div>
+<div class="login_users">
+  <% if @user %>
+    <ul><li class="color_blue"><%= @user.name %></li></ul>
+  <% end %>
+</div>
 
 <div class="main__circles">
   <div class="main__inner_wrap">
-    <div class="main__circle" id="circle__battle">Battle</div>
+    <div class="main__circle" id="circle__battle"><%= link_to_if(@user, "Battle", :game) %></div>
     <div class="main__circle" id="circle__test">Test</div>
     <div class="main__circle" id="circle__settings"><%= link_to_if(@user, "Settings", [:edit, @user]) %></div>
   </div>
