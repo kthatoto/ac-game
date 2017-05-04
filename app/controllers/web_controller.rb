@@ -5,9 +5,17 @@ class WebController < ApplicationController
   end
 
   def login
-    debugger
     if params[:login]
-      @sent = "test"
+      if user = User.find_by(user_id: params[:login][:user_id], password: params[:login][:password])
+        session[:user_id] = user.user_id
+        redirect_to :root
+      else
+        # 違いますアラート
+      end
     end
+  end
+  def logout
+    session.delete(:user_id)
+    redirect_to :root
   end
 end

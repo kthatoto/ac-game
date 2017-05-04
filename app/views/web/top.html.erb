@@ -1,7 +1,10 @@
 <% if !@user %>
-  <%= link_to "Login", :login %> or <%= link_to "Sign Up", nil %>
+  <%= link_to "Log in", :login %> or <%= link_to "Sign Up", nil %>
 <% else %>
-  <div>Name : <%= @user.name %></div>
+  <div>
+    Name : <%= @user.name %>
+    <%= link_to "Log out", :logout %>
+  </div>
 <% end %>
 
 <div>Battle</div>
