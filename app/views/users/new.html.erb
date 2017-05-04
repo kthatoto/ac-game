@@ -1,0 +1,32 @@
+<%= form_for @user do |f| %>
+
+  <div>NAME</div>
+  <%= f.text_field :name %>
+
+  <div>ID(use for login)</div>
+  <%= f.text_field :user_id %>
+
+  <div>PASSWORD(user for login)</div>
+  <%= f.text_field :password %>
+
+  <div>PASSWORD CONFIRMATION</div>
+  <%= text_field_tag :password_confirmation %>
+
+  <%= f.submit "Sign up" %>
+<% end %>
+
+<%= link_to "back", :root %>
+<%= link_to "Log in", :login %>
+
+<script type="text/javascript">
+  $(function(){
+    $("#new_user").on("submit", function(){
+      var password              = $("#user_password").val();
+      var password_confirmation = $("#password_confirmation").val();
+      if (password != password_confirmation){
+        alert("password and password_confirmation are not correct");
+        return false;
+      }
+    });
+  });
+</script>

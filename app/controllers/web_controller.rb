@@ -7,7 +7,7 @@ class WebController < ApplicationController
   def login
     if params[:login]
       if user = User.find_by(user_id: params[:login][:user_id], password: params[:login][:password])
-        session[:user_id] = user.user_id
+        sign_in(user)
         redirect_to :root
       else
         # 違いますアラート
@@ -15,7 +15,7 @@ class WebController < ApplicationController
     end
   end
   def logout
-    session.delete(:user_id)
+    sign_out
     redirect_to :root
   end
 end

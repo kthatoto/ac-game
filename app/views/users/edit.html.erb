@@ -1,0 +1,9 @@
+<%= form_for @user do |f| %>
+
+  <div>NAME</div>
+  <%= f.text_field :name %>
+
+  <%= f.submit "Update" %>
+<% end %>
+
+<%= link_to "back", :root %>
